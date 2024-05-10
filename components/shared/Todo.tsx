@@ -1,5 +1,6 @@
 import { todoType } from "@/types/todoTypes";
 import ChangeTodo from "./ChangeTodo";
+import EditTodo from "./EditTodo";
 
 const Todo = ({ todo }: { todo: todoType }) => {
   const todoStyle = {
@@ -13,7 +14,8 @@ const Todo = ({ todo }: { todo: todoType }) => {
       style={todoStyle}
     >
       <ChangeTodo todo={todo} />
-      <div>{todo.title}</div>
+      <span>{todo.title}</span>
+      <EditTodo todo={todo} />
     </div>
   );
 };
