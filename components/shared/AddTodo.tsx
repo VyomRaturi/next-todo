@@ -1,7 +1,16 @@
-import React from "react";
+import Form from "../ui/Form";
+import Input from "../ui/Input";
+import Button from "../ui/Button";
 
 const AddTodo = () => {
-  return <div>AddTodo</div>;
+  return (
+    <Form className="w-1/2 m-auto">
+      <div className="flex">
+        <Input />
+        <Button />
+      </div>
+    </Form>
+  );
 };
 
 export default AddTodo;
