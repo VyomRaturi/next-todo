@@ -1,6 +1,7 @@
-import { todoType } from "@/types/todoTypes";
-import ChangeTodo from "./ChangeTodo";
 import EditTodo from "./EditTodo";
+import DeleteTodo from "./DeleteTodo";
+import ChangeTodo from "./ChangeTodo";
+import { todoType } from "@/types/todoTypes";
 
 const Todo = ({ todo }: { todo: todoType }) => {
   const todoStyle = {
@@ -14,8 +15,11 @@ const Todo = ({ todo }: { todo: todoType }) => {
       style={todoStyle}
     >
       <ChangeTodo todo={todo} />
-      <span>{todo.title}</span>
-      <EditTodo todo={todo} />
+      <span className="text-center font-bold uppercase">{todo.title}</span>
+      <div className="flex items-center gap-5">
+        <EditTodo todo={todo} />
+        <DeleteTodo todo={todo} />
+      </div>
     </div>
   );
 };
