@@ -11,6 +11,7 @@ const Todo = ({ todo }) => {
       className="w-full  flex items-center justify-between bg-white py-3 px-20 rounded-2xl"
       style={todoStyle}
     >
+      <ChangeTodo todo={todo} />
       <div>{todo.title}</div>
     </div>
   );
