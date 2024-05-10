@@ -1,4 +1,19 @@
 import AddTodo from "@/components/shared/AddTodo";
+import { prisma } from "@/utils/prisma";
+
+async function getData() {
+  const data = await prisma.todo.findMany({
+    select: {
+      id: true,
+      title: true,
+      isCompleted: true,
+    },
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
+  return data;
+}
 
 const Home = () => {
   return (
