@@ -1,3 +1,5 @@
+import ChangeTodo from "./ChangeTodo";
+
 const Todo = ({ todo }) => {
   const todoStyle = {
     textDecoration: todo.isCompleted === true ? "line-through" : "none",
