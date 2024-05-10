@@ -15,7 +15,8 @@ async function getData() {
   return data;
 }
 
-const Home = () => {
+const Home = async () => {
+  const data = await getData();
   return (
     <div className="w-screen py-20 flex justify-center flex-col items-center">
       <span className="text-3xl font-extrabold uppercase">To-do-app</span>
@@ -26,6 +27,13 @@ const Home = () => {
 
       <div className="flex justify-center flex-col items-center w-[1000px] ">
         <AddTodo />
+        <div className=" flex flex-col gap-5 items-center justify-center mt-10 w-full">
+          {data.map((todo, id) => (
+            <div className="w-full" key={id}>
+              <Todo todo={todo} />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
