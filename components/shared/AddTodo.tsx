@@ -6,8 +6,8 @@ const AddTodo = () => {
   return (
     <Form className="w-1/2 m-auto">
       <div className="flex">
-        <Input />
-        <Button />
+        <Input name="input" type="text" placeholder="Add Todo..." />
+        <Button type="submit" text="Add" />
       </div>
     </Form>
   );
